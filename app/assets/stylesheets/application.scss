@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+$breakpoint-mobile: 500px;
+
+.rm {
+
+  &-wrapper {
+
+    padding: rem(20px 10px);
+
+    @media (min-width: $breakpoint-mobile) {
+      padding: rem(20px 40px);
+    }
+  }
+
+  &-main {
+    display: table;
+    height: 100vh;
+    margin: 0 auto;
+
+    @media (min-width: $breakpoint-mobile) {
+      width: 460px;
+    }
+  }
+
+  &-card {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+    &-oracle {
+      //text-align: left;
+    }
+  }
+}
