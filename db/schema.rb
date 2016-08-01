@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729185531) do
+ActiveRecord::Schema.define(version: 20160801112642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160729185531) do
   create_table "cards", force: :cascade do |t|
     t.string "unique_id"
     t.string "name"
+    t.text   "oracle_text"
     t.index ["name"], name: "index_cards_on_name", using: :btree
     t.index ["unique_id"], name: "index_cards_on_unique_id", using: :btree
   end
@@ -26,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160729185531) do
     t.integer "card_id",       null: false
     t.string  "multiverse_id"
     t.text    "image_url"
-    t.text    "oracle_text"
     t.text    "flavor_text"
     t.index ["card_id"], name: "index_printings_on_card_id", using: :btree
     t.index ["multiverse_id"], name: "index_printings_on_multiverse_id", using: :btree
