@@ -20,6 +20,10 @@ namespace :cards do
         printing = Printing.find_or_create_by(multiverse_id: api_card.multiverse_id, card_id: card.id)
         printing.image_url = api_card.image_url
         printing.flavor_text = api_card.flavor
+        card_set = CardSet.find_by_code(api_card.set)
+        if card_set
+          printing.card_set = card_set
+        end
         printing.save!
       end
 

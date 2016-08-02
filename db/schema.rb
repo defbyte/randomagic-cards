@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801112642) do
+ActiveRecord::Schema.define(version: 20160802174814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "card_sets", force: :cascade do |t|
+    t.string   "code",                                  null: false
+    t.string   "name",                                  null: false
+    t.string   "type"
+    t.string   "border"
+    t.boolean  "online_only",           default: false
+    t.string   "block"
+    t.string   "magic_cards_info_code"
+    t.string   "gatherer_code"
+    t.datetime "release_date"
+    t.index ["border"], name: "index_card_sets_on_border", using: :btree
+    t.index ["code"], name: "index_card_sets_on_code", using: :btree
+    t.index ["gatherer_code"], name: "index_card_sets_on_gatherer_code", using: :btree
+    t.index ["magic_cards_info_code"], name: "index_card_sets_on_magic_cards_info_code", using: :btree
+    t.index ["online_only"], name: "index_card_sets_on_online_only", using: :btree
+    t.index ["type"], name: "index_card_sets_on_type", using: :btree
+  end
 
   create_table "cards", force: :cascade do |t|
     t.string "unique_id"
@@ -28,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160801112642) do
     t.string  "multiverse_id"
     t.text    "image_url"
     t.text    "flavor_text"
+    t.integer "card_set_id"
     t.index ["card_id"], name: "index_printings_on_card_id", using: :btree
     t.index ["multiverse_id"], name: "index_printings_on_multiverse_id", using: :btree
   end
