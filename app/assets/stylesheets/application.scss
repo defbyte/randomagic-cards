@@ -1,15 +1,27 @@
 @import "lib/normalize";
 
 $breakpoint-mobile: 500px;
+$base-font-size: 16px;
+
+@function rem($value) {
+  @return ($value / $base-font-size) * 1rem;
+}
+
+html {
+  font-size: percentage($base-font-size / 16px);
+}
+
+body {
+  font-size: 1em;
+}
 
 .rm {
 
   &-wrapper {
-
-    padding: rem(20px 10px);
+    padding: 20px 10px;
 
     @media (min-width: $breakpoint-mobile) {
-      padding: rem(20px 40px);
+      padding: 0;
     }
   }
 
@@ -24,12 +36,33 @@ $breakpoint-mobile: 500px;
   }
 
   &-card {
+    background: white;
     display: table-cell;
+    padding: 10px;
     text-align: center;
     vertical-align: middle;
 
     &-oracle {
       //text-align: left;
+      line-height: rem(24px);
+    }
+  }
+
+  &-background {
+    display: none;
+    @media (min-width: $breakpoint-mobile) {
+      // Large image on large screens
+      background: image-url('backgrounds/bg-mishras-workshop.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: block;
+      filter: blur(5px);
+
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
     }
   }
 }
