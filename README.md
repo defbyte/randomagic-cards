@@ -1,24 +1,5 @@
-# README
+# RandoMagic!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application synchronizes card data with the magicthegathering.io API. Card printings are collated, and from there a card selected at random (regardless of specific printing).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TODO: add setup instructions
