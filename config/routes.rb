@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root "cards#random"
 
+  # Direct route
+  get "random", to: "cards#random"
+
 end
