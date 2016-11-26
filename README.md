@@ -1,8 +1,8 @@
-# [RandoMagic!](https://randomagic-cards.herokuapp.com)
+# RandoMagic!
 
 This application synchronizes card data with the magicthegathering.io API. Card printings are collated, and from there a card selected at random (regardless of specific printing).
 
-https://randomagic-cards.herokuapp.com
+**I've shut down the Heroku app to save myself $9 a month.**
 
 ## Getting Started in Development
 
